@@ -11,9 +11,9 @@ void* binarySearch(void *key, void *base, int length, int size, int (*compare)(v
 		status = compare(key,base+(centerIndex*size));
 		if(!status)
 			return base+(centerIndex*size);
-		if(status == -1)
+		if(status < 0)
 			last = centerIndex -1;
-		if(status == 1)
+		if(status > 0)
 			first = centerIndex + 1;
 	}
 	return NULL;
